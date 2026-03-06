@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+     <!-- favicon link  -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- tailwind & daisyUi cdn  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- font awesome cdn  -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+     <!-- css external link  -->
+    <link rel="stylesheet" href="./tailwind.css">
+
+</head>
+<body class="bg-base-300">
+  <header class="max-w-11/12 mx-auto sticky top-0 z-10">
+        <div class="navbar bg-base-100 shadow-2xs">
+            <div class="flex-1">
+                <div class="flex justify-start items-center space-x-2">
+                    <img src="./assets/github-logo.png" class="w-7 h-7" alt="">
+                    <h2 class="text-xl font-bold">GitHub Issues Tracker</h2>
+                </div>
+            </div>
+            <div class="flex gap-2">
+                <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
+                 <button class="btn"> + New Issue</button>
+            </div>
+        </div>
+
+        <!-- <section class="bg-base-100 space-x-5 w-11/12 mx-auto mt-10 py-5 px-5">
+            <button class="btn md:px-8">All</button>
+            <button class="btn md:px-8">Open</button>
+            <button class="btn md:px-8">Closed</button>
+        </section> -->
+  </header>
+  <main class="max-w-11/12 mx-auto min-h-dvh border border-amber-200">
+    <section class="bg-base-100 space-x-5 w-11/12 mx-auto mt-10 py-5 px-5">
+            <button class="btn md:px-8">All</button>
+            <button class="btn md:px-8">Open</button>
+            <button class="btn md:px-8">Closed</button>
+        </section>
+
+
+    
+    <section class="bg-base-100 space-x-5 w-11/12 mx-auto mt-5 py-5 px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 ">
+            <div class="card bg-base-100 w-full shadow-sm">
+  <figure>
+    <img
+      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+      alt="Shoes" />
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title">
+      Card Title
+      <div class="badge badge-secondary">NEW</div>
+    </h2>
+    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+    <div class="card-actions justify-end">
+      <div class="badge badge-outline">Fashion</div>
+      <div class="badge badge-outline">Products</div>
+    </div>
+  </div>
+</div> 
+            <div class="card bg-base-100 w-full shadow-sm">
+  <figure>
+    <img
+      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+      alt="Shoes" />
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title">
+      Card Title
+      <div class="badge badge-secondary">NEW</div>
+    </h2>
+    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+    <div class="card-actions justify-end">
+      <div class="badge badge-outline">Fashion</div>
+      <div class="badge badge-outline">Products</div>
+    </div>
+  </div>
+</div> 
+        
+
+        <div class="card bg-base-100 w-full shadow-sm">
+  <figure>
+    <img
+      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+      alt="Shoes" />
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title">
+      Card Title
+      <div class="badge badge-secondary">NEW</div>
+    </h2>
+    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+    <div class="card-actions justify-end">
+      <div class="badge badge-outline">Fashion</div>
+      <div class="badge badge-outline">Products</div>
+    </div>
+  </div>
+</div>
+
+    </section>
+    
+  </main>
+</body>
+</html>
