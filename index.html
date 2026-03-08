@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment 5</title>
+    <title>Home | GitHub Issues Tracker</title>
 
-    <!-- favicon link  -->
+     <!-- favicon link  -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
     <!-- tailwind & daisyUi cdn  -->
@@ -15,44 +15,123 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
      <!-- css external link  -->
-    <link rel="stylesheet" href="./tailwind.css">
+    <!-- <link rel="stylesheet" href="./tailwind.css"> -->
+
 </head>
-<body class="container mx-auto h-dvh">
-    <!-- login form  -->
-    <section class="flex justify-center items-center">
-       
-        <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs p-4 mt-5">
-
-            <div class="text-center py-5 space-y-3">
-                <div class="flex justify-center items-center "><img src="./assets/github-logo.png" alt="github-logo" class=""></div>
-
-                <h3>GitHub Issues Tracker</h3>
-                <h5>Sign in to manage your issues</h5>
-
-            </div>
-            
-
-            <label class="label">Username</label>
-            <input type="text" class="input" placeholder="Enter Username" />
-
-            <label class="label">Password</label>
-            <input type="password" class="input" placeholder="Password" />
-
-            <button class="btn btn-neutral mt-4">Login</button>
-
-            <div class="divider">OR</div>
-            <div class="text-center space-y-4">
-                <p>Demo Credentials: </p>
-                <div>
-                    <p>Username: admin </p>
-                <p>Password: admin123 </p>
+<body class="bg-base-200">
+  <header class="max-w-11/12 mx-auto">
+        <div class="md:flex py-5 bg-base-200 shadow-2xs">
+            <div class="flex-1">
+                <div class="flex justify-start items-center space-x-2">
+                    <img src="./assets/github-logo.png" class="w-7 h-7" alt="">
+                    <h2 class="text-xl font-bold">GitHub Issues Tracker</h2>
                 </div>
             </div>
-        </fieldset>
-    </section>
+            <div class="flex gap-2">
+                <input type="text" placeholder="Search" class=" flex-1 input input-bordered w-24 md:w-auto" />
+                 <button class="btn"> + New Issue</button>
+            </div>
+        </div>
 
-   
-    <!-- https://www.youtube.com/watch?v=rBF18mklgaE -->
-    <!-- script tag  -->
+        <!-- <section class="bg-base-100 space-x-5 w-11/12 mx-auto mt-10 py-5 px-5">
+            <button class="btn md:px-8">All</button>
+            <button class="btn md:px-8">Open</button>
+            <button class="btn md:px-8">Closed</button>
+        </section> -->
+  </header>
+  <main class="max-w-11/12 mx-auto border border-amber-200">
+      <div class="sticky top-0 z-10 pb-5 bg-base-200">
+
+        <section class="bg-base-100 space-x-5 w-11/12 mx-auto py-5 px-5 flex justify-between md:justify-start rounded-t-2xl">
+            <button class="btn md:px-8">All</button>
+            <button class="btn md:px-8">Open</button>
+            <button class="btn md:px-8">Closed</button>
+      </section>
+      <section class="divider my-0 py-0 max-w-11/12 mx-auto bg-base-100"></section>
+      <section class="bg-base-100 space-x-5 w-11/12 mx-auto py-5 px-5 rounded-b-2xl flex items-center">
+           <img src="" alt="img">
+
+          <div class="flex-1 md:flex justify-between items-center border-2 w-fu">
+
+               <div class="flex-1">
+            <p><span>0</span> Issues</p>
+            <p>Track and manage your project issues</p>
+           </div>
+           <div class="flex md:justify-center items-center space-x-2">
+            <p>i</p>
+            <p>Open</p>
+            <p>i</p>
+            <p>Closed</p>
+      
+           </div>
+
+          </div>
+      </section>
+
+      </div>
+
+<!-- container section  -->
+    
+      <section class="bg-base-100 space-x-5 w-11/12 mx-auto py-5 px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 rounded-t-2xl">
+            <div class="card bg-base-100 w-full shadow-sm">
+  <figure>
+    <img
+      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+      alt="Shoes" />
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title">
+      Card Title
+      <div class="badge badge-secondary">NEW</div>
+    </h2>
+    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+    <div class="card-actions justify-end">
+      <div class="badge badge-outline">Fashion</div>
+      <div class="badge badge-outline">Products</div>
+    </div>
+  </div>
+</div> 
+            <div class="card bg-base-100 w-full shadow-sm">
+  <figure>
+    <img
+      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+      alt="Shoes" />
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title">
+      Card Title
+      <div class="badge badge-secondary">NEW</div>
+    </h2>
+    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+    <div class="card-actions justify-end">
+      <div class="badge badge-outline">Fashion</div>
+      <div class="badge badge-outline">Products</div>
+    </div>
+  </div>
+</div> 
+        
+
+        <div class="card bg-base-100 w-full shadow-sm">
+  <figure>
+    <img
+      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+      alt="Shoes" />
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title">
+      Card Title
+      <div class="badge badge-secondary">NEW</div>
+    </h2>
+    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+    <div class="card-actions justify-end">
+      <div class="badge badge-outline">Fashion</div>
+      <div class="badge badge-outline">Products</div>
+    </div>
+  </div>
+</div>
+
+      </section>
+    
+  </main>
 </body>
 </html>
