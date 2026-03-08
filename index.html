@@ -47,91 +47,67 @@
             <button class="btn md:px-8">Open</button>
             <button class="btn md:px-8">Closed</button>
       </section>
+      
       <section class="divider my-0 py-0 max-w-11/12 mx-auto bg-base-100"></section>
+
       <section class="bg-base-100 space-x-5 w-11/12 mx-auto py-5 px-5 rounded-b-2xl flex items-center">
-           <img src="" alt="img">
+           <img src="./assets/Aperture.png" alt="img" class="p-2 bg-gray-200 rounded-full">
 
-          <div class="flex-1 md:flex justify-between items-center border-2 w-fu">
+          <div class="flex-1 md:flex justify-between items-center w-fu">
 
-               <div class="flex-1">
-            <p><span>0</span> Issues</p>
-            <p>Track and manage your project issues</p>
+            <div class="flex-1">
+              <p class="font-medium text-xl"><span>0</span> Issues</p>
+              <p>Track and manage your project issues</p>
            </div>
            <div class="flex md:justify-center items-center space-x-2">
-            <p>i</p>
-            <p>Open</p>
-            <p>i</p>
-            <p>Closed</p>
+              <p><i class="fa-solid fa-circle fa-fade fa-md" style="color: #00A96E;"></i></p>
+              <p class="font-medium text-xl">Open</p>
+              <p><i class="fa-solid fa-circle fa-fade fa-md" style="color: #A855F7;"></i></p>
+              <p class="font-medium text-xl">Closed</p>
       
-           </div>
+            </div>
 
           </div>
       </section>
 
       </div>
 
-<!-- container section  -->
+<!-- issue card container section  -->
     
-      <section class="bg-base-100 space-x-5 w-11/12 mx-auto py-5 px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 rounded-t-2xl">
-            <div class="card bg-base-100 w-full shadow-sm">
-  <figure>
-    <img
-      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-      alt="Shoes" />
-  </figure>
-  <div class="card-body">
-    <h2 class="card-title">
-      Card Title
-      <div class="badge badge-secondary">NEW</div>
-    </h2>
-    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-    <div class="card-actions justify-end">
-      <div class="badge badge-outline">Fashion</div>
-      <div class="badge badge-outline">Products</div>
-    </div>
-  </div>
-</div> 
-            <div class="card bg-base-100 w-full shadow-sm">
-  <figure>
-    <img
-      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-      alt="Shoes" />
-  </figure>
-  <div class="card-body">
-    <h2 class="card-title">
-      Card Title
-      <div class="badge badge-secondary">NEW</div>
-    </h2>
-    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-    <div class="card-actions justify-end">
-      <div class="badge badge-outline">Fashion</div>
-      <div class="badge badge-outline">Products</div>
-    </div>
-  </div>
-</div> 
-        
+      <section id="issueContainer" class="bg-base-100 space-x-5 w-11/12 mx-auto py-5 px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 rounded-t-2xl">
 
-        <div class="card bg-base-100 w-full shadow-sm">
-  <figure>
-    <img
-      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-      alt="Shoes" />
-  </figure>
-  <div class="card-body">
-    <h2 class="card-title">
-      Card Title
-      <div class="badge badge-secondary">NEW</div>
-    </h2>
-    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-    <div class="card-actions justify-end">
-      <div class="badge badge-outline">Fashion</div>
-      <div class="badge badge-outline">Products</div>
-    </div>
-  </div>
-</div>
+          <!-- issue card  -->
+            <!-- <div class="card bg-base-100 w-full shadow-sm border-t-4 border-[#00A96E]">
+    
+                <div class="card-body ">
+                    <div class="card-title justify-between">
+                      <img src="./assets/Open-Status.png" alt="img">
+                      <div class="badge text-[#EF4444] bg-[#FEECEC] outline-[#FECACA]">HIGH</div>
+                    </div>
+
+                    <p class="cardTitle text-xl font-bold pt-5">Fix navigation menu on mobile devices</p>
+                    <p class="cardDescription">The navigation menu doesn't collapse properly on mobile devices...</p>
+
+                    <div class="card-actions">
+                      <div class="badge badge-outline text-[#EF4444] bg-[#FEECEC] outline-[#FECACA]">Bug</div>
+                      <div class="badge badge-outline text-[#D97706] bg-[#FFF8DB] outline-[#FDE68A]">Help wanted</div>
+                      <div class="badge badge-outline text-[#00A96E] bg-[#DEFCE8] outline-[#BBF7D0]">Enhancement</div>
+                    </div>
+
+                    <div class="divider"></div>
+                    <div class="grid grid-cols-2 justify-between">
+                      <p class="">john_doe</p>
+                      <p class="">date time</p>
+                      <p class="">john_doe</p>
+                      <p class="">date time</p>
+                    </div>
+                </div>
+            </div>  -->
 
       </section>
     
   </main>
+
+  <script src="./script/loadIssues.js"></script>
 </body>
 </html>
