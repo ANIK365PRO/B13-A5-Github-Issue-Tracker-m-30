@@ -44,17 +44,25 @@ async function switchTab(tab) {
         }
     }
     
-   
+   loadIssues(tab)
 }
 
-async function loadIssues() {
+async function loadIssues(tab) {
     // const url = 'https://phi-lab-server.vercel.app/api/v1/lab/issues'
     showLoading()
     const res = await fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues');
     const data = await res.json()
     // console.log(data.data)
     hideLoading()
-    displayIssues(data.data)
+    let filterData = data.data
+    if(tab == 'open'){
+        filterData = filterData.filter((item) => item.status == 'open')
+
+    }else if(tab == 'closed'){
+        filterData = filterData.filter(item => item.status == 'closed')
+
+    }
+    displayIssues(filterData)
 }
 // {
 // "id": 1,
@@ -206,4 +214,4 @@ async function showDetailsModal(issueId ) {
 }
 
 switchTab(currentTab)
-loadIssues()
+loadIssues('all')
