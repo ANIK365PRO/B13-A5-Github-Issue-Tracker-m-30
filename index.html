@@ -108,6 +108,44 @@
     
   </main>
 
+  <!-- modal section  -->
+  <section>
+    <!-- Open the modal using ID.showModal() method -->
+<!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+
+<dialog id="show_issue_card_details" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box space-y-4">
+    <h3 id="modal_title" class="text-lg font-bold">Fix broken image uploads</h3>
+    <ul class="flex space-x-3">
+      <li id="modal_status" class="badge badge-outline bg-[#00A96E] text-white outline-[#BBF7D0]">Opened</li>
+      <li>by <span id="modal_author">fahim ahamed</span></li>
+      <li id="modal_createdAt"> 22/ 2/ 26</li>
+    </ul>
+     <div id="modal_labels" class="card-actions space-x-6  text-[#D97706] bg-[#FFF8DB] outline-[#FDE68A]">
+          <!-- <div class="badge badge-outline text-[#EF4444] bg-[#FEECEC] outline-[#FECACA]">Bug</div>
+          <div class="badge badge-outline text-[#D97706] bg-[#FFF8DB] outline-[#FDE68A]">Help wanted</div>
+          <div class="badge badge-outline text-[#00A96E] bg-[#DEFCE8] outline-[#BBF7D0]">Enhancement</div> -->
+    </div>
+    <p id="modal_description" class="py-4">The navigation menu doesn't collapse properly on mobile devices. Need to fix the responsive behavior.</p>
+
+    <div class="grid grid-cols-2 justify-between space-y-2">
+        <p id="modal" class="font-light">Assignee:</p>
+        <p id="modal" class="font-light">Priority:</p>
+        <p id="modal_assignee" class="font-semibold">name </p>
+        <p id="modal_priority" class="badge text-[#EF4444] bg-[#FEECEC] outline-[#FECACA]">HIGH</p>
+    </div>
+
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+  </section>
+
   <script src="./script/loadIssues.js"></script>
 </body>
 </html>

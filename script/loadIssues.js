@@ -2,6 +2,18 @@
 const issueContainer = document.getElementById('issueContainer')
 const actionContainer = document.getElementById('actionContainer')
 
+const showIssueCardDetails = document.getElementById('show_issue_card_details')
+// modal data 
+const modalTitle = document.getElementById('modal_title')
+const modalStatus = document.getElementById('modal_status')
+const modalAuthor = document.getElementById('modal_author')
+const modalCreatedAt = document.getElementById('modal_createdAt')
+const modalLabels = document.getElementById('modal_labels')
+const modalDescription = document.getElementById('modal_description')
+const modalAssignee = document.getElementById('modal_assignee')
+const modalPriority = document.getElementById('modal_priority')
+
+
 async function loadIssues() {
     // const url = 'https://phi-lab-server.vercel.app/api/v1/lab/issues'
 
@@ -30,6 +42,8 @@ function displayIssues(issues){
     // console.log(issues)
 
     issues.forEach((value) => {
+        // console.log(value.id)
+
         const dateAuthor = new Date(value.createdAt);
         const formatted = dateAuthor.toLocaleDateString("en-GB", {
                 year: "numeric",
@@ -58,10 +72,14 @@ function displayIssues(issues){
         const card = document.createElement('div')
 
         card.className = "card bg-base-100 w-full shadow-sm border-t-4"
-        card.classList.add(`${value.status === 'open'? 'border-[#00A96E]' : 'border-[#A855F7]' }`)
+        card.classList.add(`${value.status === 'open'? 'border-[#00A96E]' : 'border-[#A855F7]' }` )
+        
 
         card.innerHTML = `
-                <div class="card-body ">
+                <div class="card-body "
+                 onclick= "showDetailsModal(${value.id})"
+                >
+
                     <div class="card-title justify-between">
 
                         ${value.status === 'open'? '<i class="fa-regular fa-circle-dot fa-fade fa-md" style="color: rgb(99, 230, 190);"></i>' : '<i class="fa-regular fa-circle-check fa-fade fa-sm" style="color: rgb(177, 151, 252);"></i>' }
@@ -97,9 +115,60 @@ function displayIssues(issues){
     })
 }
 
+// {
+// "status": "success",
+// "message": "Issue fetched successfully",
+// "data": {
+// "id": 33,
+// "title": "Add bulk operations support",
+// "description": "Allow users to perform bulk actions like delete, update status on multiple items at once.",
+// "status": "open",
+// "labels": [
+// "enhancement"
+// ],
+// "priority": "low",
+// "author": "bulk_barry",
+// "assignee": "",
+// "createdAt": "2024-02-02T10:00:00Z",
+// "updatedAt": "2024-02-02T10:00:00Z"
+// }
+// }
+async function showDetailsModal(issueId ) {
+        
+    console.log(issueId)
+    const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issue/${issueId}`)
+    const data = await res.json()
+    const issueDetails = (data.data)
+    
+    // for assignee date 
+    const dateAuthor = new Date(issueDetails.createdAt);
+        const formatted = dateAuthor.toLocaleDateString("en-GB", {
+                year: "numeric",
+                month: "long",
+                day: "numeric"
+        });
+
+    // for labels 
+    //  for labels 
+        // let labelsHTML = "";
+
+        // issueId.labels.forEach(label => {
+        //     labelsHTML += `<div class="badge badge-outline ${label ==='bug'&& ('text-[#EF4444] bg-[#FEECEC] outline-[#FECACA]')} ${label === 'enhancement' && ('text-[#00A96E] bg-[#DEFCE8] outline-[#BBF7D0]')} ${(label === 'help wanted' || label === 'good first issue' || label === 'documentation') ?  ('text-[#D97706] bg-[#FFF8DB] outline-[#FDE68A]') : ''}">
+            
+        //     ${label}</div>
+        //     `;
+        //     // console.log(label)
+        // });
+
+    modalTitle.textContent  =  issueDetails.title
+    modalStatus.textContent  = issueDetails.status
+    modalAuthor.textContent  = issueDetails.author
+    modalCreatedAt.textContent  = formatted
+    modalLabels.textContent = issueDetails.labels
+    modalDescription.textContent  = issueDetails.description
+    modalAssignee.textContent  = issueDetails.assignee? issueDetails.assignee : "Unassigned"
+    modalPriority.textContent  = issueDetails.priority
+    showIssueCardDetails.showModal()
+}
+
 loadIssues()
-
-
-//  <div class="badge badge-outline text-[#EF4444] bg-[#FEECEC] outline-[#FECACA]">Bug</div>
-//                         <div class="badge badge-outline text-[#D97706] bg-[#FFF8DB] outline-[#FDE68A]">Help wanted</div>
-//                         <div class="badge badge-outline text-[#00A96E] bg-[#DEFCE8] outline-[#BBF7D0]">Enhancement</div>
