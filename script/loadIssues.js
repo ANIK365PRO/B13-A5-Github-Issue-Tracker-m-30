@@ -3,6 +3,9 @@ const issueContainer = document.getElementById('issueContainer')
 const actionContainer = document.getElementById('actionContainer')
 
 const showIssueCardDetails = document.getElementById('show_issue_card_details')
+
+const loadingSpinner = document.getElementById('loadingSpinner')
+
 // modal data 
 const modalTitle = document.getElementById('modal_title')
 const modalStatus = document.getElementById('modal_status')
@@ -13,13 +16,22 @@ const modalDescription = document.getElementById('modal_description')
 const modalAssignee = document.getElementById('modal_assignee')
 const modalPriority = document.getElementById('modal_priority')
 
+function showLoading(){
+    loadingSpinner.classList.remove('hidden')
+    issueContainer.innerHTML = ''
+}
+function hideLoading(){
+    loadingSpinner.classList.add('hidden')
+    
+}
 
 async function loadIssues() {
     // const url = 'https://phi-lab-server.vercel.app/api/v1/lab/issues'
-
+    showLoading()
     const res = await fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues');
     const data = await res.json()
     // console.log(data.data)
+    hideLoading()
     displayIssues(data.data)
 }
 // {
