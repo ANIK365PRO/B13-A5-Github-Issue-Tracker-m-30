@@ -3,6 +3,7 @@ const issueContainer = document.getElementById('issueContainer')
 const actionContainer = document.getElementById('actionContainer')
 
 const showIssueCardDetails = document.getElementById('show_issue_card_details')
+const countData = document.getElementById('count_Data')
 
 const loadingSpinner = document.getElementById('loadingSpinner')
 
@@ -54,6 +55,7 @@ async function loadIssues(tab) {
     const data = await res.json()
     // console.log(data.data)
     hideLoading()
+
     let filterData = data.data
     if(tab == 'open'){
         filterData = filterData.filter((item) => item.status == 'open')
@@ -62,6 +64,9 @@ async function loadIssues(tab) {
         filterData = filterData.filter(item => item.status == 'closed')
 
     }
+    //  for counting Number count issue 
+    countData.innerText = filterData.length
+    console.log(countData)
     displayIssues(filterData)
 }
 // {
