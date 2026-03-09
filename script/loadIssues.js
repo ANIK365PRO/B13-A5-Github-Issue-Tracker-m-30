@@ -5,6 +5,9 @@ const actionContainer = document.getElementById('actionContainer')
 const showIssueCardDetails = document.getElementById('show_issue_card_details')
 const countData = document.getElementById('count_Data')
 
+
+// console.log(searchInput.value)
+
 const loadingSpinner = document.getElementById('loadingSpinner')
 
 // modal data 
@@ -24,6 +27,15 @@ function showLoading(){
 function hideLoading(){
     loadingSpinner.classList.add('hidden')
     
+}
+
+async function searchData(){
+// console.log(searchInput.value)
+    const searchInput = document.getElementById('search_input').value
+    const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchInput}`)
+    const data = await res.json();
+     console.log(searchInput)
+    displayIssues(data.data)
 }
 
 async function switchTab(tab) {

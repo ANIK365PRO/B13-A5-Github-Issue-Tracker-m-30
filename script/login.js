@@ -8,7 +8,7 @@ document.getElementById('loginBtn').addEventListener('click', function(e){
 
     userName === 'admin'? 
         (userPassword ==='admin123'? 
-            (window.location.href = `./index.html`): alert('please enter valid user password'))
+            (window.location.href = `./home.html`): alert('please enter valid user password'))
     :alert('please enter valid user name')
 
     // if(userName === 'admin' && userPassword === 'admin123'){

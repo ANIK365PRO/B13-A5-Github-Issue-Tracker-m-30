@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | GitHub Issues Tracker</title>
+    <title>Login | GitHub Issues Tracker</title>
 
-     <!-- favicon link  -->
+    <!-- favicon link  -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
     <!-- tailwind & daisyUi cdn  -->
@@ -16,146 +16,44 @@
 
      <!-- css external link  -->
     <!-- <link rel="stylesheet" href="./tailwind.css"> -->
-     <link rel="stylesheet" href="./styles/style.css">
-
 </head>
-<body class="bg-base-200">
-  <header class="max-w-11/12 mx-auto">
-        <div class="md:flex py-5 bg-base-200 shadow-2xs">
-            <div class="flex-1">
-                <div class="flex justify-start items-center space-x-2">
-                    <img src="./assets/github-logo.png" class="w-7 h-7" alt="">
-                    <h2 class="text-xl font-bold">GitHub Issues Tracker</h2>
+<body class="">
+    <!-- login form  -->
+    <section class="flex justify-center items-center max-w-md min-h-screen mx-auto">
+       
+        <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs p-4 mt-5">
+
+            <div class="text-center py-5 space-y-3">
+                <div class="flex justify-center items-center "><img src="./assets/github-logo.png" alt="github-logo" class=""></div>
+
+                <h3>GitHub Issues Tracker</h3>
+                <h5>Sign in to manage your issues</h5>
+
+            </div>
+            
+
+            <label class="label">Username</label>
+            <input id="userName" type="text" class="input" placeholder="Enter Username admin" required/>
+
+            <label class="label">Password</label>
+            <input id="userPassword" type="password" class="input" placeholder="Enter Password admin123" />
+
+            <button class="btn btn-neutral mt-4" id="loginBtn">Login</button>
+
+            <!-- <div class="divider">OR</div>
+            <div class="text-center space-y-4">
+                <p>Demo Credentials: </p>
+                <div>
+                    <p>Username: admin </p>
+                <p>Password: admin123 </p>
                 </div>
-            </div>
-            <div class="flex gap-2">
-                <input type="text" placeholder="Search" class=" flex-1 input input-bordered w-24 md:w-auto" />
-                 <button class="btn"> + New Issue</button>
-            </div>
-        </div>
+            </div> -->
+        </fieldset>
+    </section>
 
-        <!-- <section class="bg-base-100 space-x-5 w-11/12 mx-auto mt-10 py-5 px-5">
-            <button class="btn md:px-8">All</button>
-            <button class="btn md:px-8">Open</button>
-            <button class="btn md:px-8">Closed</button>
-        </section> -->
-  </header>
-  <main class="max-w-11/12 mx-auto border border-amber-200">
-      <div class="sticky top-0 z-10 pb-5 bg-base-200">
-
-        <section id="tab_btn_container" class="bg-base-100 space-x-5 w-11/12 mx-auto py-5 px-5 flex justify-between md:justify-start rounded-t-2xl">
-            <button id="tab_all" class="btn md:px-8" onclick="switchTab('all')">All</button>
-            <button id="tab_open"class="btn md:px-8" onclick="switchTab('open')">Open</button>
-            <button  id="tab_closed"class="btn md:px-8" onclick="switchTab('closed')">Closed</button>
-      </section>
-      
-      <section class="divider my-0 py-0 max-w-11/12 mx-auto bg-base-100"></section>
-
-      <section class="bg-base-100 space-x-5 w-11/12 mx-auto py-5 px-5 rounded-b-2xl flex items-center">
-           <img src="./assets/Aperture.png" alt="img" class="p-2 bg-gray-200 rounded-full">
-
-          <div class="flex-1 md:flex justify-between items-center w-fu">
-
-            <div class="flex-1">
-              <p class="font-medium text-xl"><span id="count_Data">0</span> Issues</p>
-              <p>Track and manage your project issues</p>
-           </div>
-           <div class="flex md:justify-center items-center space-x-2">
-              <p><i class="fa-solid fa-circle fa-fade fa-md" style="color: #00A96E;"></i></p>
-              <p class="font-medium text-xl">Open</p>
-              <p><i class="fa-solid fa-circle fa-fade fa-md" style="color: #A855F7;"></i></p>
-              <p class="font-medium text-xl">Closed</p>
-      
-            </div>
-
-          </div>
-      </section>
-
-      </div>
-
-<!-- issue card container section  -->
-    
-      <section id="issueContainer" class="bg-base-100 space-x-5 w-11/12 mx-auto py-5 px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 rounded-t-2xl">
-
-          <!-- issue card  -->
-            <!-- <div class="card bg-base-100 w-full shadow-sm border-t-4 border-[#00A96E]">
-    
-                <div class="card-body ">
-                    <div class="card-title justify-between">
-                      <img src="./assets/Open-Status.png" alt="img">
-                      <div class="badge text-[#EF4444] bg-[#FEECEC] outline-[#FECACA]">HIGH</div>
-                    </div>
-
-                    <p class="cardTitle text-xl font-bold pt-5">Fix navigation menu on mobile devices</p>
-                    <p class="cardDescription">The navigation menu doesn't collapse properly on mobile devices...</p>
-
-                    <div class="card-actions">
-                      <div class="badge badge-outline text-[#EF4444] bg-[#FEECEC] outline-[#FECACA]">Bug</div>
-                      <div class="badge badge-outline text-[#D97706] bg-[#FFF8DB] outline-[#FDE68A]">Help wanted</div>
-                      <div class="badge badge-outline text-[#00A96E] bg-[#DEFCE8] outline-[#BBF7D0]">Enhancement</div>
-                    </div>
-
-                    <div class="divider"></div>
-                    <div class="grid grid-cols-2 justify-between">
-                      <p class="">john_doe</p>
-                      <p class="">date time</p>
-                      <p class="">john_doe</p>
-                      <p class="">date time</p>
-                    </div>
-                </div>
-            </div>  -->
-
-      </section>
-
-      <!-- loading spinner -->
-       <section class="bg-base-100 w-11/12 mx-auto">
-
-         <div class="h-[40vh] flex justify-center items-center">
-             <span id="loadingSpinner"  class="loading loading-infinity text-accent font-extrabold h-40 w-40 hidden"></span>
-         </div>
-
-       </section>
-    
-  </main>
-
-  <!-- modal section  -->
-  <section>
-    <!-- Open the modal using ID.showModal() method -->
-<!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
-
-<dialog id="show_issue_card_details" class="modal modal-bottom sm:modal-middle">
-  <div class="modal-box space-y-4">
-    <h3 id="modal_title" class="text-lg font-bold">Fix broken image uploads</h3>
-    <ul class="flex space-x-3">
-      <li id="modal_status" class="badge badge-outline bg-[#00A96E] text-white outline-[#BBF7D0]">Opened</li>
-      <li>by <span id="modal_author">fahim ahamed</span></li>
-      <li id="modal_createdAt"> 22/ 2/ 26</li>
-    </ul>
-     <div id="modal_labels" class="card-actions space-x-6  text-[#D97706] bg-[#FFF8DB] outline-[#FDE68A]">
-          <!-- <div class="badge badge-outline text-[#EF4444] bg-[#FEECEC] outline-[#FECACA]">Bug</div>
-          <div class="badge badge-outline text-[#D97706] bg-[#FFF8DB] outline-[#FDE68A]">Help wanted</div>
-          <div class="badge badge-outline text-[#00A96E] bg-[#DEFCE8] outline-[#BBF7D0]">Enhancement</div> -->
-    </div>
-    <p id="modal_description" class="py-4">The navigation menu doesn't collapse properly on mobile devices. Need to fix the responsive behavior.</p>
-
-    <div class="grid grid-cols-2 justify-between space-y-2">
-        <p id="modal" class="font-light">Assignee:</p>
-        <p id="modal" class="font-light">Priority:</p>
-        <p id="modal_assignee" class="font-semibold">name </p>
-        <p id="modal_priority" class="badge text-[#EF4444] bg-[#FEECEC] outline-[#FECACA]">HIGH</p>
-    </div>
-
-    <div class="modal-action">
-      <form method="dialog">
-        <!-- if there is a button in form, it will close the modal -->
-        <button class="btn">Close</button>
-      </form>
-    </div>
-  </div>
-</dialog>
-
-  </section>
-
-  <script src="./script/loadIssues.js"></script>
+   
+    <!-- https://www.youtube.com/watch?v=rBF18mklgaE -->
+    <!-- script tag  -->
+     <script src="./script/login.js"></script>
 </body>
 </html>
