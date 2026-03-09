@@ -91,7 +91,10 @@
     - 4️⃣ What is an arrow function?
     - 5️⃣ What are template literals?
 
+1. In JavaScript, var, let, and const are used to declare variables. Their main differences are scope, re-declaration, and reassignment.
+a. ar is function scoped. It can be re-declared and reassigned. It is hoisted and initialized with undefined.
 
+b. let 
 ---
 
 ## 🛠️ Technology Stack

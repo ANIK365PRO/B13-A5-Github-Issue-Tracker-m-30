@@ -16,6 +16,7 @@
 
      <!-- css external link  -->
     <!-- <link rel="stylesheet" href="./tailwind.css"> -->
+     <link rel="stylesheet" href="./styles/style.css">
 
 </head>
 <body class="bg-base-200">
@@ -42,10 +43,10 @@
   <main class="max-w-11/12 mx-auto border border-amber-200">
       <div class="sticky top-0 z-10 pb-5 bg-base-200">
 
-        <section class="bg-base-100 space-x-5 w-11/12 mx-auto py-5 px-5 flex justify-between md:justify-start rounded-t-2xl">
-            <button class="btn md:px-8">All</button>
-            <button class="btn md:px-8">Open</button>
-            <button class="btn md:px-8">Closed</button>
+        <section id="tab_btn_container" class="bg-base-100 space-x-5 w-11/12 mx-auto py-5 px-5 flex justify-between md:justify-start rounded-t-2xl">
+            <button id="tab_all" class="btn md:px-8" onclick="switchTab('all')">All</button>
+            <button id="tab_open"class="btn md:px-8" onclick="switchTab('open')">Open</button>
+            <button  id="tab_closed"class="btn md:px-8" onclick="switchTab('closed')">Closed</button>
       </section>
       
       <section class="divider my-0 py-0 max-w-11/12 mx-auto bg-base-100"></section>
@@ -74,7 +75,7 @@
 
 <!-- issue card container section  -->
     
-      <section id="issueContainer" class="bg-base-100 space-x-5 w-11/12 mx-auto py-5 px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 rounded-t-2xl">
+      <section id="issueContainer" class="bg-base-100 space-x-5 w-11/12 mx-auto py-5 px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 rounded-t-2xl">
 
           <!-- issue card  -->
             <!-- <div class="card bg-base-100 w-full shadow-sm border-t-4 border-[#00A96E]">

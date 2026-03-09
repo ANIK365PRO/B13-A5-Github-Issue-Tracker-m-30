@@ -1,4 +1,4 @@
-
+const currentTab = 'all'
 const issueContainer = document.getElementById('issueContainer')
 const actionContainer = document.getElementById('actionContainer')
 
@@ -23,6 +23,28 @@ function showLoading(){
 function hideLoading(){
     loadingSpinner.classList.add('hidden')
     
+}
+
+async function switchTab(tab) {
+    console.log('all tab click', tab)
+
+    const tabActive = ['bg-[#00A96E]', 'border-#00A96E', 'text-white']
+    const tabInactive = ['bg-transparent', 'border', 'text-black']
+
+    const tabs = ['all', 'open', 'closed'];
+
+    for(let t of tabs){
+        const tabName = document.getElementById('tab_'+t);
+        if( t === tab){
+            tabName.classList.remove(...tabInactive)
+            tabName.classList.add(...tabActive)
+        }else{
+            tabName.classList.remove(...tabActive)
+            tabName.classList.add(...tabInactive)
+        }
+    }
+    
+   
 }
 
 async function loadIssues() {
@@ -183,4 +205,5 @@ async function showDetailsModal(issueId ) {
     showIssueCardDetails.showModal()
 }
 
+switchTab(currentTab)
 loadIssues()
